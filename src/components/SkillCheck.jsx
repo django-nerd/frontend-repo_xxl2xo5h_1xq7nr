@@ -101,15 +101,15 @@ export default function SkillCheck() {
   };
 
   return (
-    <section id="skills" className="relative py-20 bg-slate-950">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="skills" className="relative py-24 bg-stone-50">
+      <div className="mx-auto max-w-6xl px-6">
         <div className="mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">Discover your strengths</h2>
-          <p className="mt-2 text-blue-100/80">A playful, grade-free check to understand your core competencies.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">Discover your strengths</h2>
+          <p className="mt-2 text-slate-600">A playful, grade-free check to understand your core competencies.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm">
             <AnimatePresence mode="wait">
               {step < QUESTIONS.length ? (
                 <motion.div
@@ -119,17 +119,17 @@ export default function SkillCheck() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-white text-sm">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-amber-100 px-3 py-1.5 text-amber-800 text-sm">
                     {(() => { const Icon = QUESTIONS[step].icon; return <Icon size={16} /> })()}
                     <span>Question {step + 1} of {QUESTIONS.length}</span>
                   </div>
-                  <h3 className="mt-4 text-white text-xl font-semibold">{QUESTIONS[step].text}</h3>
+                  <h3 className="mt-4 text-slate-900 text-xl font-semibold">{QUESTIONS[step].text}</h3>
                   <div className="mt-4 grid gap-3">
                     {QUESTIONS[step].options.map((o) => (
                       <button
                         key={o.k}
                         onClick={() => handleAnswer(QUESTIONS[step].id, o.k)}
-                        className="text-left rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-blue-100 hover:bg-white/10 transition-colors"
+                        className="text-left rounded-2xl border border-stone-200 bg-white px-4 py-3 text-slate-700 hover:shadow-md hover:-translate-y-0.5 transition-all"
                       >
                         {o.label}
                       </button>
@@ -144,31 +144,31 @@ export default function SkillCheck() {
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <div className={`inline-flex items-center gap-2 rounded-lg bg-gradient-to-r ${result.color} px-3 py-2 text-white text-sm`}>
+                  <div className={`inline-flex items-center gap-2 rounded-full bg-gradient-to-r ${result.color} px-3 py-1.5 text-white text-sm`}>
                     <Lightbulb size={16} />
                     <span>Your cluster: {result.label}</span>
                   </div>
-                  <h3 className="mt-4 text-white text-xl font-semibold">Great! Here are strengths that match your style:</h3>
+                  <h3 className="mt-4 text-slate-900 text-xl font-semibold">Great! Here are strengths that match your style:</h3>
                   <ul className="mt-4 grid grid-cols-2 gap-2">
                     {result.skills.map((s) => (
-                      <li key={s} className="rounded-lg bg-white/10 px-3 py-2 text-blue-100 text-sm">{s}</li>
+                      <li key={s} className="rounded-xl bg-slate-50 border border-stone-200 px-3 py-2 text-slate-700 text-sm">{s}</li>
                     ))}
                   </ul>
-                  <button onClick={restart} className="mt-6 inline-flex rounded-lg border border-white/20 px-4 py-2 text-white hover:bg-white/10">Try again</button>
+                  <button onClick={restart} className="mt-6 inline-flex rounded-full border border-stone-300 px-4 py-2 text-slate-800 hover:bg-slate-50">Try again</button>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
+          <div className="rounded-3xl border border-stone-200 bg-white p-6 shadow-sm">
             <div className="grid gap-4">
-              <div className="rounded-xl bg-white/5 p-4">
-                <h4 className="text-white font-semibold">What you’ll get</h4>
-                <p className="text-blue-100/80 text-sm mt-1">A simple overview of your strengths you can share with companies — without revealing grades or personal details.</p>
+              <div className="rounded-2xl bg-slate-50 border border-stone-200 p-4">
+                <h4 className="text-slate-900 font-semibold">What you’ll get</h4>
+                <p className="text-slate-600 text-sm mt-1">A simple overview of your strengths you can share with companies — without revealing grades or personal details.</p>
               </div>
-              <div className="rounded-xl bg-white/5 p-4">
-                <h4 className="text-white font-semibold">Why it matters</h4>
-                <p className="text-blue-100/80 text-sm mt-1">Companies can search by skills and potential, leading to fairer opportunities for apprenticeships and internships.</p>
+              <div className="rounded-2xl bg-slate-50 border border-stone-200 p-4">
+                <h4 className="text-slate-900 font-semibold">Why it matters</h4>
+                <p className="text-slate-600 text-sm mt-1">Companies can search by skills and potential, leading to fairer opportunities for apprenticeships and internships.</p>
               </div>
             </div>
           </div>

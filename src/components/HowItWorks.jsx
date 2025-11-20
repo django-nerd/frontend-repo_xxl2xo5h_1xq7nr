@@ -21,11 +21,11 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how" className="relative py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+    <section id="how" className="relative py-24 bg-stone-50">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-white">How it works</h2>
-          <p className="mt-2 text-blue-100/80">Simple steps to connect talent and companies in a fair, modern way.</p>
+        <div className="mb-8">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">How it works</h2>
+          <p className="mt-2 text-slate-600">Simple steps to connect talent and companies in a fair, modern way.</p>
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
@@ -36,13 +36,13 @@ export default function HowItWorks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="rounded-2xl border border-white/10 bg-slate-900/60 p-6"
+              className="group rounded-3xl border border-stone-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-white">
+              <div className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-amber-100 text-amber-700">
                 <s.icon size={18} />
               </div>
-              <h3 className="mt-4 text-white font-semibold">{s.title}</h3>
-              <p className="mt-2 text-blue-100/80 text-sm">{s.text}</p>
+              <h3 className="mt-4 text-slate-900 font-semibold">{s.title}</h3>
+              <p className="mt-2 text-slate-600 text-sm">{s.text}</p>
             </motion.div>
           ))}
         </div>

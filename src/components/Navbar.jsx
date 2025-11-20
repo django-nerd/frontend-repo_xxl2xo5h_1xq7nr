@@ -5,31 +5,31 @@ export default function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-30">
       <div className="mx-auto max-w-7xl px-6 py-4">
-        <div className="flex items-center justify-between rounded-2xl border border-white/10 bg-slate-900/60 backdrop-blur-xl px-4 py-3">
+        <div className="flex items-center justify-between rounded-2xl border border-stone-200/80 bg-white/80 backdrop-blur-xl px-4 py-3 shadow-sm">
           <div className="flex items-center gap-2">
             <motion.div
               initial={{ rotate: -10, scale: 0.9 }}
               animate={{ rotate: 0, scale: 1 }}
               transition={{ type: "spring", stiffness: 260, damping: 18 }}
-              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg"
+              className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-md"
             >
               <Sparkles size={18} />
             </motion.div>
-            <span className="text-white font-semibold tracking-tight">NovaPath</span>
+            <span className="text-slate-800 font-semibold tracking-tight">NovaPath</span>
           </div>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
-            <a href="#how" className="text-blue-100 hover:text-white transition-colors">How it works</a>
-            <a href="#skills" className="text-blue-100 hover:text-white transition-colors">Skill check</a>
-            <a href="#benefits" className="text-blue-100 hover:text-white transition-colors">Benefits</a>
-            <a href="#contact" className="text-blue-100 hover:text-white transition-colors">Contact</a>
+            <a href="#how" className="text-slate-600 hover:text-slate-900 transition-colors">How it works</a>
+            <a href="#skills" className="text-slate-600 hover:text-slate-900 transition-colors">Skill check</a>
+            <a href="#benefits" className="text-slate-600 hover:text-slate-900 transition-colors">Benefits</a>
+            <a href="#contact" className="text-slate-600 hover:text-slate-900 transition-colors">Contact</a>
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="#skills" className="hidden sm:inline-flex items-center gap-2 rounded-lg bg-white/10 px-3 py-2 text-sm text-white hover:bg-white/20 transition-colors border border-white/10">
+            <a href="#skills" className="hidden sm:inline-flex items-center gap-2 rounded-full bg-slate-900 text-white px-4 py-2 text-sm font-medium hover:bg-slate-800 transition-colors">
               Try Skill Test
             </a>
-            <button className="md:hidden inline-flex items-center justify-center text-blue-100 hover:text-white">
+            <button className="md:hidden inline-flex items-center justify-center text-slate-700 hover:text-slate-900">
               <Menu />
             </button>
           </div>
